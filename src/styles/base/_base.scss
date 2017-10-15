@@ -7,10 +7,14 @@ body {
   font-size: $m-size;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-button:disabled{
+button:disabled {
   cursor: default;
+}
+
+.is-active {
+  font-weight: bold;
 }
