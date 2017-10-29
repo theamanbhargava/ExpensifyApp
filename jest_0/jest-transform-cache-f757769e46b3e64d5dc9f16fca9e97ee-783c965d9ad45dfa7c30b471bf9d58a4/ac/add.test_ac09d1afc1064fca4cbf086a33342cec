@@ -1,0 +1,13 @@
+'use strict';var add = function add(a, b) {return a + b;};
+
+var subtract = function subtract(a, b) {return a - b;};
+
+test('should add two numbers', function () {
+    var result = add(3, 4);
+    expect(result).toBe(7);
+});
+
+test('should subtract add two numbers', function () {
+    var result = subtract(4, 2);
+    expect(result).toBe(1);
+});
