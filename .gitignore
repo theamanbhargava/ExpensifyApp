@@ -62,3 +62,5 @@ typings/
 #jest snapshots
 *.test.js.snap
 
+bundle.js
+public/styles.css
