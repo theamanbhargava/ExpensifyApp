@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Aman Bhargavar",
   "license": "MIT",
+  "engines": {
+    "node": "8.0.0"
+  }
   "scripts": {
     "serve": "live-server public/",
     "build:dev": "webpack",
