@@ -1,0 +1,30 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactRedux = require('react-redux');
+var _ExpenseForm = require('./ExpenseForm');var _ExpenseForm2 = _interopRequireDefault(_ExpenseForm);
+var _expenses = require('../actions/expenses');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var EditExpensePage = function EditExpensePage(props) {
+  return (
+    _react2.default.createElement('div', null,
+      _react2.default.createElement(_ExpenseForm2.default, {
+        expense: props.expense,
+        onSubmit: function onSubmit(expense) {
+          props.dispatch((0, _expenses.editExpense)(props.expense.id, expense));
+          props.history.push('/');
+        } }),
+
+      _react2.default.createElement('button', { onClick: function onClick() {
+            props.dispatch((0, _expenses.removeExpense)({ id: props.expense.id }));
+            props.history.push('/');
+          } }, 'Remove')));
+
+
+};
+
+var mapStateToProps = function mapStateToProps(state, props) {
+  return {
+    expense: state.expenses.find(function (expense) {return expense.id === props.match.params.id;}) };
+
+};exports.default =
+
+(0, _reactRedux.connect)(mapStateToProps)(EditExpensePage);

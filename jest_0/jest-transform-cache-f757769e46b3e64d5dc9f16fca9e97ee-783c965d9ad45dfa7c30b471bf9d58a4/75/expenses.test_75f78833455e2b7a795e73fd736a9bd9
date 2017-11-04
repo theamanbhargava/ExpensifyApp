@@ -1,0 +1,15 @@
+'use strict';var _expenses = require('../../reducers/expenses');var _expenses2 = _interopRequireDefault(_expenses);
+var _expenses3 = require('../fixtures/expenses');var _expenses4 = _interopRequireDefault(_expenses3);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+test('should set default state', function () {
+    var state = (0, _expenses2.default)(undefined, { type: '@@INIT' });
+    expect(state).toEqual([]);
+});
+
+test('should remove expense by id', function () {
+    var action = {
+        type: 'REMOVE_EXPENSE',
+        id: _expenses4.default[1].id };
+
+
+});

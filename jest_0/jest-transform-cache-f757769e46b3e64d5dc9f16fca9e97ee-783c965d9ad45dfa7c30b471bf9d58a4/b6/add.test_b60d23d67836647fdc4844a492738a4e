@@ -1,0 +1,6 @@
+'use strict';var add = function add(a, b) {return a + b + 1;};
+
+test('should add two numbers', function () {
+    var result = add(4, 4);
+    expect(result).toBe(7);
+});

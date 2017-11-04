@@ -1,0 +1,51 @@
+'use strict';var _expenses = require('../../reducers/expenses');var _expenses2 = _interopRequireDefault(_expenses);
+var _expenses3 = require('../fixtures/expenses');var _expenses4 = _interopRequireDefault(_expenses3);
+var _uuid = require('uuid');var _uuid2 = _interopRequireDefault(_uuid);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+test('should set default state', function () {
+    var state = (0, _expenses2.default)(undefined, { type: '@@INIT' });
+    expect(state).toEqual([]);
+});
+
+test('should remove expense by id', function () {
+    var action = {
+        type: 'REMOVE_EXPENSE',
+        id: _expenses4.default[1].id };
+
+    var state = (0, _expenses2.default)(_expenses4.default, action);
+    expect(state).toEqual([_expenses4.default[0], _expenses4.default[2]]);
+});
+
+test('should not remove expense if id not found', function () {
+    var action = {
+        type: 'REMOVE_EXPENSE',
+        id: '123' };
+
+    var state = (0, _expenses2.default)(_expenses4.default, action);
+    expect(state).toEqual(_expenses4.default);
+});
+
+test('should add expense by id', function () {
+    var action = {
+        type: 'ADD_EXPENSE',
+        expense: {
+            id: (0, _uuid2.default)(),
+            description: description,
+            note: note,
+            amount: amount,
+            createdAt: createdAt } };
+
+
+});
+
+test('should edit expense by id', function () {
+    var action = {
+        type: 'EDIT_EXPENSE',
+        id: _expenses4.default[1].id,
+        updates: {
+            amount: 50000 } };
+
+
+    var state = (0, _expenses2.default)(_expenses4.default, action);
+    expect(state.expenses[1].amount).toBe(50000);
+});

@@ -1,0 +1,76 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _enzyme = require('enzyme');
+var _ExpenseListFilters = require('../../components/ExpenseListFilters');
+var _expenses = require('../fixtures/expenses');var _expenses2 = _interopRequireDefault(_expenses);
+var _filters = require('../fixtures/filters');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var setTextFilter = void 0,sortByDate = void 0,sortByAmount = void 0,setStartDate = void 0,setEndDate = void 0,wrapper = void 0;
+
+beforeEach(function () {
+    setTextFilter = jest.fn();
+    sortByDate = jest.fn();
+    sortByAmount = jest.fn();
+    setStartDate = jest.fn();
+    setEndDate = jest.fn();
+    wrapper = (0, _enzyme.shallow)(
+    _react2.default.createElement(_ExpenseListFilters.ExpenseListFilters, {
+        filters: _filters.filters,
+        setTextFilter: setTextFilter,
+        sortByAmount: sortByAmount,
+        sortByDate: sortByDate,
+        setStartDate: setStartDate,
+        setEndDate: setEndDate }));
+
+
+});
+
+test('should render ExpenseListFilters correctly', function () {
+    expect(wrapper).toMatchSnapshot();
+});
+
+test('should render ExpenseListFilters with alt data correctly', function () {
+    wrapper.setProps({ filters: _filters.altFilters });
+    expect(wrapper).toMatchSnapshot();
+});
+
+test('should handle text change', function () {
+    var value = 'rent';
+    wrapper.find('input').simulate('change', {
+        target: {
+            value: value } });
+
+
+    expect(setTextFilter).toHaveBeenLastCalledWith(value);
+});
+
+test('should sort by date', function () {
+    var value = 'date';
+    wrapper.find('select').simulate('change', {
+        target: {
+            value: value } });
+
+
+    expect(sortByDate).toHaveBeenCalled();
+});
+
+test('should sort by amount', function () {
+    var value = 'amount';
+    wrapper.find('select').simulate('change', {
+        target: {
+            value: value } });
+
+
+    expect(sortByAmount).toHaveBeenCalled();
+});
+
+test('should handle date changes', function () {
+    var startDate = moment(0).add('4', years);
+    var endDate = moment(0).add('8', years);
+    wrapper.find('DateRangePicker').prop('onDatesChange')({ startDate: startDate, endDate: endDate });
+    expect(setStartDate).toHaveBeenLastCalledWith(startDate);
+    expect(setStartDate).toHaveBeenLastCalledWith(startDate);
+});
+
+test('should handle text change', function () {
+    wrapper.setProps();
+});

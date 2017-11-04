@@ -1,0 +1,5 @@
+"use strict";var _expenses = require("../../actions/expenses");
+
+test('should setup remove expense', function () {
+
+});

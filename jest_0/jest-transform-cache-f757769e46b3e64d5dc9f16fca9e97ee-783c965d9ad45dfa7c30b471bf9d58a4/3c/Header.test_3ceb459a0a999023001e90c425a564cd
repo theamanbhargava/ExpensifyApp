@@ -1,0 +1,14 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _enzyme = require('enzyme');
+var _enzymeToJson = require('enzyme-to-json');var _enzymeToJson2 = _interopRequireDefault(_enzymeToJson);
+var _Header = require('../../components/Header');var _Header2 = _interopRequireDefault(_Header);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+test('should render Header correctly', function () {
+    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_Header2.default, null));
+    expect(wrapper).toMatchSnapshot();
+    // expect(wrapper.find('h1').length).toBe(1);
+    /*    const renderer = new ReactShallowRenderer();
+        renderer.render(<Header/>);
+        expect(renderer.getRenderOutput()).toMatchSnapshot();*/
+
+});

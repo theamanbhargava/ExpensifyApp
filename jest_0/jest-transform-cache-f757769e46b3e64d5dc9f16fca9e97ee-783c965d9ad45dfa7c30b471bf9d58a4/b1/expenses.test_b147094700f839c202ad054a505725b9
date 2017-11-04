@@ -1,0 +1,18 @@
+'use strict';var _expenses = require('../../actions/expenses');
+
+test('should setup remove expense', function () {
+    var action = (0, _expenses.removeExpense)({ id: '123abc' });
+    expect(action).toEqual({
+        type: 'REMOVE_EXPENSE',
+        id: '123abc' });
+
+});
+
+test('should setup edit expense', function () {
+    var action = (0, _expenses.editExpense)({ id: '123abc', updates: { title: 'Hello' } });
+    expect(action.toEqual({
+        type: 'EDIT_EXPENSE',
+        id: '123abc',
+        updates: { title: 'Hello' } }));
+
+});
