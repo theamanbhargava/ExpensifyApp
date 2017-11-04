@@ -1,9 +1,0 @@
-'use strict';var _filters = require('../../reducers/filters');var _filters2 = _interopRequireDefault(_filters);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-test('should setup defaults', function () {
-    var state = (0, _filters2.default)(undefined, { type: '@@INIT' });
-    expect(state).toEqual({
-        text: '' });
-
-
-});

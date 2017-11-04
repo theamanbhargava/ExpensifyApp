@@ -1,8 +1,0 @@
-'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
-var _enzyme = require('enzyme');
-var _ExpenseForm = require('../../components/ExpenseForm');var _ExpenseForm2 = _interopRequireDefault(_ExpenseForm);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-test('make sure expense form renders correctly', function () {
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_ExpenseForm2.default, null));
-    expect(wrapper).toMatchSnapshot();
-});

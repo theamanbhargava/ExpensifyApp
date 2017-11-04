@@ -1,3 +1,0 @@
-'use strict';var _expenses = require('../../selectors/expenses');var _expenses2 = _interopRequireDefault(_expenses);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-test('should filter by text value');

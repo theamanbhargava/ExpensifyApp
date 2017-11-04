@@ -2,3 +2,5 @@ node_modules/
 public/dist/
 tests/__mocks__/
 tests/components/__snapshots__/
+jest_0/
+firefox-esr_root/
